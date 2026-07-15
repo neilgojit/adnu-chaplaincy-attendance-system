@@ -1,0 +1,247 @@
+:root {
+  --blue-deep: #0b2a6b;
+  --blue: #123a8f;
+  --blue-light: #1e4fb8;
+  --gold: #ffc72c;
+  --gold-deep: #e0a800;
+  --cream: #fff8e7;
+  --text-dark: #1a1a1a;
+  --success: #1e7d3c;
+  --error: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    linear-gradient(rgba(11, 42, 107, 0.55), rgba(11, 42, 107, 0.55)),
+    url('GROUP.png') center center / cover no-repeat fixed;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 48px;
+}
+
+.app {
+  width: 100%;
+  max-width: 440px;
+}
+
+.header {
+  text-align: center;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
+.crest {
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0 0 4px;
+  letter-spacing: 0.3px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px 22px 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border-top: 6px solid var(--gold);
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin: 16px 0 6px;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+input[type='text'],
+select {
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 16px;
+  border: 2px solid #d9dde5;
+  border-radius: 10px;
+  background: #fbfbfd;
+  color: var(--text-dark);
+  transition: border-color 0.15s;
+}
+
+input[type='text']:focus,
+select:focus {
+  outline: none;
+  border-color: var(--blue-light);
+  background: #fff;
+}
+
+.new-student-fields {
+  margin-top: 10px;
+  padding: 14px 14px 4px;
+  background: var(--cream);
+  border-radius: 10px;
+  border: 1px dashed var(--gold-deep);
+}
+
+.hint {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--blue-deep);
+}
+
+button[type='submit'] {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--blue-deep);
+  background: var(--gold);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s;
+}
+
+button[type='submit']:active {
+  transform: scale(0.98);
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.message {
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.message.success {
+  background: #e5f6ec;
+  color: var(--success);
+  border: 1px solid #b7e3c6;
+}
+
+.message.error {
+  background: #fdeceb;
+  color: var(--error);
+  border: 1px solid #f3c2be;
+}
+
+.message.info {
+  background: #eaf1ff;
+  color: var(--blue-deep);
+  border: 1px solid #c5d8ff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.footer a {
+  color: var(--gold);
+  font-size: 12px;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ---- Admin page shared bits ---- */
+.admin-table-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e6ee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+thead th {
+  background: var(--blue-deep);
+  color: var(--gold);
+  position: sticky;
+  top: 0;
+}
+
+tbody tr:nth-child(even) {
+  background: #f7f9fc;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.toolbar input, .toolbar select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid #d9dde5;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  background: var(--blue-deep);
+  color: #fff;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-secondary:hover {
+  background: var(--blue);
+}

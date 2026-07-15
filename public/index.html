@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Chaplaincy Attendance | ADNU</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+    <img src="./CSV.png" width="150" height="150">
+
+      <h1>Ateneo de Naga University</h1>
+      <p class="subtitle">Chaplaincy Student Volunteers — Attendance</p>
+    </header>
+
+    <main class="card">
+      <div id="messageBox" class="message hidden"></div>
+
+      <form id="checkinForm" autocomplete="off">
+        <label for="studentNumber">Student Number</label>
+        <input
+          type="text"
+          id="studentNumber"
+          name="studentNumber"
+          inputmode="numeric"
+          placeholder="e.g. 202312345"
+          required
+        />
+
+        <label for="ministry">Ministry</label>
+        <select id="ministry" name="ministry" required>
+          <option value="" disabled selected>Loading ministries…</option>
+        </select>
+
+        <div id="newStudentFields" class="hidden new-student-fields">
+          <p class="hint">We don't have you on file yet — please complete this once:</p>
+
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Dela Cruz" />
+
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="Juan" />
+
+          <label for="course">Course</label>
+          <input type="text" id="course" placeholder="e.g. BS Computer Science" />
+        </div>
+
+        <button type="submit" id="submitBtn">Mark Me Present</button>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <a href="/admin">Admin</a>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
