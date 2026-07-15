@@ -53,35 +53,6 @@ Ministry**, **Proclamation Ministry**, and **Music Ministry**. Add/remove
 ministries anytime from the **Ministries** tab in `/admin`, no code changes
 needed.
 
-## Making it a live website
-
-This app needs a small persistent disk for the SQLite database file — it
-cannot run on purely serverless/static hosting. Two good, free-tier-friendly
-options:
-
-### Option A: Render.com (recommended, easiest)
-
-1. Push this project to a GitHub repository.
-2. On Render.com → **New Web Service** → connect your repo.
-3. Build command: `npm install` · Start command: `npm start`.
-4. Add a **Persistent Disk** (Render's free/starter tiers support this):
-   mount path `/data`, size 1 GB is plenty.
-5. Add environment variables:
-   - `DB_PATH` = `/data/attendance.db`
-   - `ADMIN_PASSWORD` = (your own password)
-6. Deploy. Render gives you a permanent `https://your-app.onrender.com` URL —
-   share that link (or a QR code pointing to it) with volunteers.
-
-### Option B: Railway.app
-
-1. Push to GitHub, then **New Project → Deploy from GitHub repo** on Railway.
-2. Add a **Volume**, mount it at `/data`.
-3. Set environment variables `DB_PATH=/data/attendance.db` and `ADMIN_PASSWORD`.
-4. Railway auto-detects Node and runs `npm start`.
-
-> ⚠️ Whichever host you choose, the database **must** live on a persistent
-> disk/volume, not the app's regular filesystem — most platforms wipe that on
-> every redeploy, which would erase all attendance history.
 
 ## Backing up your data
 
